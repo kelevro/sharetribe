@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.32, for osx10.10 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for osx10.12 (x86_64)
 --
--- Host: 127.0.0.1    Database: sharetribe_development
+-- Host: localhost    Database: sharetribe_development
 -- ------------------------------------------------------
--- Server version	5.7.15-log
+-- Server version	5.7.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -244,13 +244,15 @@ CREATE TABLE `communities` (
   `small_cover_photo_updated_at` datetime DEFAULT NULL,
   `custom_color1` varchar(255) DEFAULT NULL,
   `custom_color2` varchar(255) DEFAULT NULL,
+  `slogan_color` varchar(6) DEFAULT NULL,
+  `description_color` varchar(6) DEFAULT NULL,
   `stylesheet_url` varchar(255) DEFAULT NULL,
   `stylesheet_needs_recompile` tinyint(1) DEFAULT '0',
   `service_logo_style` varchar(255) DEFAULT 'full-logo',
   `currency` varchar(3) NOT NULL,
   `facebook_connect_enabled` tinyint(1) DEFAULT '1',
   `minimum_price_cents` int(11) DEFAULT NULL,
-  `hide_expiration_date` tinyint(1) DEFAULT '0',
+  `hide_expiration_date` tinyint(1) DEFAULT '1',
   `facebook_connect_id` varchar(255) DEFAULT NULL,
   `facebook_connect_secret` varchar(255) DEFAULT NULL,
   `google_analytics_key` varchar(255) DEFAULT NULL,
@@ -315,7 +317,6 @@ CREATE TABLE `community_customizations` (
   `about_page_content` mediumtext,
   `terms_page_content` mediumtext,
   `privacy_page_content` mediumtext,
-  `storefront_label` varchar(255) DEFAULT NULL,
   `signup_info_content` text,
   `private_community_homepage_content` mediumtext,
   `verification_to_post_listings_info_content` mediumtext,
@@ -1347,6 +1348,7 @@ CREATE TABLE `people` (
   `password_salt` varchar(255) DEFAULT NULL,
   `given_name` varchar(255) DEFAULT NULL,
   `family_name` varchar(255) DEFAULT NULL,
+  `display_name` varchar(255) DEFAULT NULL,
   `phone_number` varchar(255) DEFAULT NULL,
   `description` text,
   `image_file_name` varchar(255) DEFAULT NULL,
@@ -1599,7 +1601,7 @@ CREATE TABLE `transactions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-08 14:13:02
+-- Dump completed on 2017-04-07 14:51:14
 INSERT INTO schema_migrations (version) VALUES ('20080806070738');
 
 INSERT INTO schema_migrations (version) VALUES ('20080807071903');
@@ -3219,4 +3221,14 @@ INSERT INTO schema_migrations (version) VALUES ('20161107132513');
 INSERT INTO schema_migrations (version) VALUES ('20161107141257');
 
 INSERT INTO schema_migrations (version) VALUES ('20161109094513');
+
+INSERT INTO schema_migrations (version) VALUES ('20170216134444');
+
+INSERT INTO schema_migrations (version) VALUES ('20170220123526');
+
+INSERT INTO schema_migrations (version) VALUES ('20170309104456');
+
+INSERT INTO schema_migrations (version) VALUES ('20170313201104');
+
+INSERT INTO schema_migrations (version) VALUES ('20170314075755');
 
