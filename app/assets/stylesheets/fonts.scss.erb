@@ -5,5 +5,5 @@
   If you want to run in Heroku with font-awesome, you'll need to change this
   (e.g. by replacing the whole line with font-awesome.min import)
 */
-
-<%= (APP_CONFIG.icon_pack == "font-awesome" ? "@import 'font-awesome.min';" : "@import '#{APP_CONFIG.ss_social_location}';\n@import '#{APP_CONFIG.ss_pika_location}';").html_safe %>
+@import 'ss-social';
+@import 'ss-pika';
