@@ -162,6 +162,12 @@ module TransactionHelper
           text: t("conversations.status.request_confirmed")
         }
       } },
+      free_accepted: ->() { {
+        both: {
+          icon: icon_tag("check", ["icon-fix-rel", "confirmed"]),
+          text: t("conversations.status.request_confirmed")
+        }
+      } },
 
       canceled: ->() { {
         both: {
